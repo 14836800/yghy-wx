@@ -1,5 +1,8 @@
 import Router from 'vue-router'
-export default new Router({
+import beforeEach from '@/router/beforeEach'
+import afterEach from '@/router/afterEach'
+const router = new Router({
+  linkActiveClass: 'active',
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
@@ -13,6 +16,10 @@ export default new Router({
   routes: [{
     path: '/',
     name: '首页',
-    component: ()=>import('../views/index')
+    component: ()=>import('../views/index/index')
   }]
 })
+
+router.beforeEach(beforeEach)
+router.afterEach(afterEach)
+export default router

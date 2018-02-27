@@ -1,3 +1,4 @@
+var path = require('path')
 module.exports = {
     devServer: {
         open: process.platform === 'darwin',
@@ -8,6 +9,13 @@ module.exports = {
         hotOnly: false,
         // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#configuring-proxy
         proxy: null, // string | Object
-        before: app => {}
+        before: app => { }
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': resolve('src')
+        }
     },
 }

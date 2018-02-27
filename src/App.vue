@@ -1,38 +1,43 @@
 <template>
   <div id="app">
-      <mt-picker :slots="slots" @change="handleChange"></mt-picker>
+    <!-- 加载动画 -->
+    <div class="loader" v-show="isLoading">
+      <div class="loader-inner">
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loading-text">加载中</div>
+      </div>
+    </div>
+    <!-- toats 提示-->
+    <toats></toats>
+    <!-- 路由插座-->
+    <router-view></router-view>
   </div>
 </template>
 <script>
-// import { Swipe, SwipeItem } from 'mint-ui';
+import {mapState} from 'vuex'
+import Toats from '@/components/toats'
 export default {
   components:{
+    Toats
   },
-  methods:{
-    handleChange(index){
-      console.log(index)
-    }
-  },
-  data(){
-    return {
-      slots: [
-        {
-          flex: 1,
-          values: ['2015-01', '2015-02', '2015-03', '2015-04', '2015-05', '2015-06'],
-          className: 'slot1',
-          textAlign: 'right'
-        }, {
-          divider: true,
-          content: '-',
-          className: 'slot2'
-        }, {
-          flex: 1,
-          values: ['2015-01', '2015-02', '2015-03', '2015-04', '2015-05', '2015-06'],
-          className: 'slot3',
-          textAlign: 'left'
-        }
-      ]
-    }
+  computed:{
+    ...mapState({
+      'isLoading': state=> state.app.isLoading
+    })
   }
 }
 </script>
