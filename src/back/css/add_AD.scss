@@ -1,0 +1,91 @@
+$color:#158d48;
+$cfen:#f0f0f0;
+$border:#dfdfdf;
+.order{
+  margin-bottom:2rem;
+}
+.order_up_item{
+  margin: 0.32rem 0;
+  background-color:#fff;
+}
+.sy_bk_detail{
+  display: -webkit-box;
+  padding: 0.48rem 0.64rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+.sy_check{
+    width: 1.28rem;
+    display: -webkit-box;
+    -webkit-box-align:center;
+}
+.sy_check_div{
+  width: 0.84rem;
+  height: 0.84rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 100%;
+  position: relative;
+}
+.info_midden{
+  -webkit-box-flex: 1;
+}
+.s_icade{
+  display: -webkit-box;
+  font-size: 0.56rem;
+  color: #2b2b2b;
+}
+.s_i_one{
+  -webkit-box-flex: 1;
+}
+.sy_check_div_over{
+  background: url('../images/v_sure.png');
+  background-size: cover;
+  border: none;
+
+}
+.s_i_two{
+  text-align: right;
+}
+.s_address{
+  font-size: 0.45rem;
+  margin-top: 0.48rem;
+  color: #979797;
+}
+.s_edit{
+  display: -webkit-box;
+  -webkit-box-align:center;
+  -webkit-box-pack: center;
+  font-size: 0.448rem;
+}
+.s_edit div{
+  -webkit-box-flex: 1;
+  text-align: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.s_edit div:first-child{
+  border-right: 1px solid #f0f0f0;
+}
+.order_info_more{
+  text-align:center;
+  font-size: 0.48rem;
+  color: $color;
+  padding-top: 0.24rem;
+}
+.add_adres{
+  background-color:white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.24rem 0;
+  font-size: 0.48rem;
+  font-weight: 500;
+  text-align: center;
+  z-index: 4;
+}
+.add_adres::before{
+  content: "+";
+  font-size: 30rpx;
+  color: $color;
+  padding-right:0.16rem;
+}

@@ -1,0 +1,245 @@
+$color:#158d48;
+$cfen:#f0f0f0;
+$border:#dfdfdf;
+.content{
+  .dd_info{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0.8rem 0.5rem;
+    color:#797979;
+    background:white repeat-x bottom url('../images/tj_one.png');
+    background-size: 1.8rem 0.2rem;
+
+  }
+  .info_left{
+    width: 1rem;
+    text-align: center;
+    padding-right:0.1rem;
+    img{
+      width: 1.1rem;
+    }
+  }
+  .info_midden{
+    -webkit-box-flex: 1;
+    padding:0 0.4rem;
+        min-width: 8.8rem;
+  }
+  .s_icade{
+    display: -webkit-box;
+    font-size: 0.55rem;
+    color: #2b2b2b;
+  }
+  .s_i_one{
+    -webkit-box-flex: 1;
+  }
+  .s_i_two{
+    text-align: right;
+  }
+  .s_address{
+    font-size: 0.47rem;
+    margin-top: 0.2rem;
+    color: #979797;
+  }
+  .info_right{
+    height: 1rem;
+    text-align: -webkit-right;
+    img{
+      width: 100%;
+
+    }
+  }
+  .dd_info_up{
+    background-color: #f0f0f0;
+  }
+  .bk_det_right{
+    margin-left:0.5rem;
+  }
+  .bk_det_left {
+    width:3rem;
+    height:3rem;
+  }
+  .bk_bott_dis_mon{
+    color: #ed4d4d;
+    font-size: 0.54rem;
+    font-weight: bold;
+    margin-top: 0.58rem;
+  }
+  .sy_bk_detail{
+    display: -webkit-flex;
+    align-items: center;
+    padding: 0.32rem 0.51rem;
+    background-color:white;
+    margin: 0.51rem 0;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid #dfdfdf;
+    img{
+      border-radius: 0.2rem;
+    }
+  }
+  .info_div{
+    background-color:white;
+    padding: 0 0.64rem;
+    margin-bottom: 2.08rem;
+  }
+  .bk_num{
+    text-align: right;
+    position: absolute;
+    right: 0.64rem;
+    color: #2b2b2b;
+    font-style: normal;
+  }
+  .dd_info_detail{
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.44rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .info_det_txt{
+    font-size: 0.448rem;
+  }
+  .info_det_numbox{
+    width: 3.52rem;
+    height: 0.8rem;
+    border: 1px solid #2b2b2b;
+    border-radius: 5px;
+    margin-right: 0.8rem;
+    display: -webkit-box;
+  }
+  .num_box{
+      display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+  }
+  .num{
+    color: #ed4d4d;
+    -webkit-box-flex: 1;
+    border-right: 1px solid #2b2b2b;
+    border-left: 1px solid #2b2b2b;
+    font-size: 0.448rem;
+  }
+  .info_det_numbox input{
+    text-align: center;
+  }
+  .num_btn{
+    color: #2b2b2b;
+    width: 60rpx;
+  }
+
+  .padding{
+    margin-right: 0.8rem;
+  }
+  .total_mon{
+    color: #ed4d4d;
+    font-size: 0.544rem;
+  }
+  .addr_edit{
+  display: -webkit-flex;
+  font-size: 0.0416rem;
+  color: #979797;
+}
+
+.remark_title{
+  display: -webkit-flex;
+  justify-content: center;
+  font-size: 0.544rem;
+  margin-top: 0.448rem;
+  font-weight: bold;
+}
+.remark_cont{
+  width: 95%;
+  height: 3.2rem;
+  background-color: #f5f5f5;
+  border: 1px solid #dfdfdf;
+  margin-top: 0.32rem;
+  padding: 0.32rem 0.256rem;
+  font-size: 0.48rem;
+}
+.dd_info_remark{
+  padding-bottom: 0.64rem;
+}
+.s_bottom{
+  display: -webkit-box;
+  height: 1.92rem;
+  -webkit-box-align: center;
+  background-color:white;
+  font-size: 0.48rem;
+  width:100%;
+  color: #2b2b2b;
+  position: fixed;
+  bottom: 0;
+}
+.s_left{
+  display: -webkit-box;
+  margin-left: 0.64rem;
+  -webkit-box-flex: 1;
+  font-size: 0.6rem;
+  i{
+    color:$color;
+    font-style: normal;
+  }
+}
+.s_right{
+  width: 3.52rem;
+  background-color:$color;
+  color: white;
+  text-align: center;
+  height: 1.92rem;
+  line-height: 1.92rem;
+}
+
+.icon{
+  display: -webkit-flex;
+  align-items: center;
+  color: #2bbe20;
+  margin-top: 0.448rem;
+  margin-left: 0.32rem;
+}
+.icon icon{
+  margin-top: -1px;
+}
+.icon text{
+  margin-left: 0.128rem;
+  font-size: 0.4rem;
+}
+.icon_box{
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  width: 0.35rem;
+  height:0.35rem;
+  border: 1px solid #2bbe20;
+  border-radius: 0.35rem;
+  margin-left: 0.48rem;
+}
+.dd_info_down{
+  display: -webkit-flex;
+  -webkit-flex-flow:wrap;
+  justify-content: center;
+}
+.dd_info_btn{
+  background-color: #ed4d4d;
+  color: #fff;
+  width: 88%;
+  display: -webkit-flex;
+  justify-content: center;
+  padding: 0.32rem 0;
+  border-radius: 5px;
+  margin-top: 1.28rem;
+  font-size: 0.56rem;
+}
+.info_det_input{
+  -webkit-flex:1;
+  margin-left: 0.64rem;
+
+}
+.info_det_input input{
+  border:1px solid #bfbfbf;
+  font-size:0.41rem;
+  width:95%;
+  border-radius:10rpx;
+  padding:2px 0;
+  padding-left: 5%;
+}
+}

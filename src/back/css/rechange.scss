@@ -1,0 +1,63 @@
+$color:#158d48;
+$cfen:#f0f0f0;
+$border:#dfdfdf;
+
+.content{
+  background-color: $cfen;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.cont_re{
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  margin-top:1rem;
+  border: 1px solid $border;
+  p{
+    padding:0.8rem 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+}
+.cont_pt{
+  font-size: 1rem;
+  margin:0 0.7rem;
+  border-bottom: 1px solid $border;
+  label{
+    width: 100%;
+    display: -webkit-flex;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  input{
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    padding-left: 0.2rem;
+    -webkit-flex: 1;
+    margin-top: -0.2rem;
+  }
+}
+.addr_save_btn{
+  width: 86%;
+  background-color: $color;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  font-size: 0.54rem;
+  margin: 1.02rem auto;
+  padding: 0.32rem 0;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+.save_btn{
+  opacity: 1 !important;
+}
+.ad_oer{
+  opacity: 1;
+}
