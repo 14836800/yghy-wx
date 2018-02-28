@@ -30,13 +30,18 @@
 <script>
 import {mapState} from 'vuex'
 import Toats from '@/components/toats'
+import WxConfig from '@/utils/wxConfig'
 export default {
   components:{
     Toats
   },
+  beforeCreate(){
+    WxConfig(this)
+  },
   computed:{
     ...mapState({
-      'isLoading': state=> state.app.isLoading
+      'isLoading': state=> state.app.isLoading,
+      'fetching': state=> state.app.fetching
     })
   }
 }
