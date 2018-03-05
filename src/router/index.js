@@ -17,6 +17,35 @@ const router = new Router({
     path: '/',
     name: '首页',
     component: ()=>import('../views/index/index')
+  },{
+    path: '/login',
+    name: '登入绑定',
+    component: ()=>import('../views/login/index')
+  },{
+    path: '/rechange',
+    name: '充值',
+    component: ()=>import('../views/rechange/index')
+  },{
+    path: '/product',
+    name: '商品详情',
+    component: ()=>import('../views/product/index')
+  },{
+    path: '/order',
+    name: '确定支付',
+    component: ()=>import('../views/product/order')
+  },{
+    path: '/address',
+    name: '',
+    component: ()=>import('../views/product/address'),
+    children: [{
+      path: '',
+      name: '选择地址',
+      component: ()=>import('../views/product/selectAddress')
+    },{
+      path: 'create',
+      name: '创建收货地址',
+      component: ()=>import('../views/product/createAddress')
+    }]
   }]
 })
 

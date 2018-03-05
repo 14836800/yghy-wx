@@ -20,43 +20,7 @@
           </div>
       </div>
     </div>
-      <div class="cont_arlist" :style="{height:fixedHeight}">
-        <div v-if="IndexShow">
-          <div class="cont_a_left">
-              <div class="cont_list_left" :style="{height:fixedHeight}">
-                  <ul>
-                      <li v-for="(item,index) in items" :class='item.class' @click='haldClass(index)'>
-                          {{ item.name }}
-                      </li>
-                  </ul>
-              </div>
-              <div class="cont_list_right" :style="{height:fixedHeight}">
-                  <h2>全部{{itemsModel.title}}</h2>
-                  <ul>
-                    <li v-for="(item,index) in itemsModel.content" @click='ToClass(index)'>
-                        {{ item.name }}
-                    </li>
-                  </ul>
-              </div>
-          </div>
-        </div>
-        <div v-if="!IndexShow">
-          <ul class="c_i_list" :style="{height:fixedHeight}" v-if="itemHonet">
-              <li v-for="(item,index) in itemHonet" @click='routerClick(item)'>
-                <div class="c_i_left"><img :src="item.thumbnail" /></div>
-                <div class="c_i_middle">
-                    <p>{{item.number}} {{item.name}} {{item.level}}</p>
-                    <p>规格:{{item.spec}}  装量:{{item.boxQuantity}}  箱号:{{item.boxNo}}</p>
-                    <p>单价:<span>￥{{item.price}}</span>/箱 库存:<span>{{item.stock}}</span>箱</p>
-                </div>
-                <div class="c_i_right">
-                   详情<img src="../images/right.png" />
-                </div>
-              </li>
-          </ul>
-          <div v-else class="order_info_more">没有更多啦！</div>
-        </div>
-      </div>
+     
       <div class="button_bottom" ref='button_bottom'>
           <div class="b_one" @click="onTo('/myorder')">账单详情</div>
           <div class="b_two" @click="onTo('/search')">查看订单</div>

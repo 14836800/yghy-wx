@@ -8,12 +8,14 @@ const state = {
     success: '',
     error: [],
     warning: '',
-    validation:[]
-  }
+    validation:''
+  },
+  code: '',
+  address: null
 }
 export default{
   state,
   actions,
-  // getters,
-  mutations
+  mutations,
+  getters
 }

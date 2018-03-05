@@ -1,13 +1,27 @@
 import {isArray} from 'lodash'
 import { Indicator, Toast } from 'mint-ui';
+import {urlRedirect,appId} from '@/config/index'
+import {removeStore} from '@/utils/helps'
 export default (http,store,router) =>{
   // https://github.com/mzabriskie/axios#interceptors
   http.interceptors.response.use(
     response => {
       if(response.data.status === '10000'){
-        return Promise.reject(response)
+        store.dispatch('setMessage',{type:'error',message:'错误的code'})
+        store.dispatch('setFetching', { fetching: false })
+        removeStore('openId')
+        setTimeout(()=>{
+          window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(urlRedirect)}&response_type=code&scope=snsapi_base&state=123#wechat_redirect`
+        },2000)
       }else if(response.data.status !== '200'){
-        return Promise.reject(response)
+        store.dispatch('setMessage',{type:'validation',message:response.data.msg})
+        store.dispatch('setFetching', { fetching: false })
+        return response
+        // removeStore('openId')
+        // setTimeout(()=>{
+        //   window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(urlRedirect)}&response_type=code&scope=snsapi_base&state=123#wechat_redirect`
+        // },2000)
+        // router.replace({path:'/'})
       }
       return response
     },
@@ -22,7 +36,10 @@ export default (http,store,router) =>{
         Indicator.open({
           text: '网络连接超时',
           spinnerType: 'fading-circle'
-        });
+        })
+        setTimeout(()=>{
+          Indicator.close()
+        },1000)
       }
       /**
       * If token is either expired, not provided or invalid
@@ -35,6 +52,7 @@ export default (http,store,router) =>{
           iconClass: 'icon icon-error',
           duration: 3000
         });
+        removeStore('openId')
         router.push({ path: '/' })
       }
       /**

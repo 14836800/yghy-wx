@@ -1,6 +1,25 @@
 @charset 'UTF-8';
-html,body{
+body,html{
   height: 100%;
+}
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption, {
+  // height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  color: #333;
+  font-weight: normal;
+  font-family: "Microsoft Yahei";
+  font-size: .6rem;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-font-smoothing: antialiased;
+  &:hover{
+      outline: none;
+  }
 }
 #app{
   height: 100%;
@@ -109,7 +128,6 @@ html,body{
 .toats{
   width: 100%;
   z-index: 10;
-  color: #fff;
   font-size: 17px;
   left: 0rem;
   bottom: 1rem;
@@ -118,11 +136,12 @@ html,body{
   text-align: center;
   #success-msg{
     width: 80%;
+    color: #fff;
     border-radius: 2rem;
     -moz-border-radius: 2rem;
     -webkit-border-radius: 2rem;
     background-color: rgba(83, 153, 83,.8);
-    padding: 1rem;
+    padding: .5rem;
     margin: 0rem auto;
   }
   #error-msg{
@@ -130,17 +149,19 @@ html,body{
     border-radius: 2rem;
     -moz-border-radius: 2rem;
     -webkit-border-radius: 2rem;
+    color: #fff;
     background-color: rgba(248, 55, 55, 0.8);
-    padding: 1rem;
+    padding: .5rem;
     margin: 0rem auto;
   }
   #validation-msg{
     width: 80%;
+    color: #fff;
     border-radius: 2rem;
     -moz-border-radius: 2rem;
     -webkit-border-radius: 2rem;
     background-color: rgb(66, 151, 248);
-    padding: 1rem;
+    padding: .5rem;
     margin: 0rem auto;
   }
 }

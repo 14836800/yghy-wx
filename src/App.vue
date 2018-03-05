@@ -1,26 +1,8 @@
 <template>
   <div id="app">
     <!-- 加载动画 -->
-    <div class="loader" v-show="isLoading">
-      <div class="loader-inner">
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
-        </div>
-        <div class="loading-text">加载中</div>
-      </div>
-    </div>
+    <loading :isLoading="isLoading" :loadingText="'正在加载中'"></loading>
+    <loading :isLoading="fetching" :loadingText="'请求数据中'"></loading>
     <!-- toats 提示-->
     <toats></toats>
     <!-- 路由插座-->
@@ -30,10 +12,12 @@
 <script>
 import {mapState} from 'vuex'
 import Toats from '@/components/toats'
+import Loading from '@/components/loading'
 import WxConfig from '@/utils/wxConfig'
 export default {
   components:{
-    Toats
+    Toats,
+    Loading
   },
   beforeCreate(){
     WxConfig(this)
@@ -43,6 +27,12 @@ export default {
       'isLoading': state=> state.app.isLoading,
       'fetching': state=> state.app.fetching
     })
+  },
+  metaInfo(){
+    // 设置应用标题
+    return {
+      title: this.$route.name
+    }
   }
 }
 </script>

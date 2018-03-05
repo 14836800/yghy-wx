@@ -7,7 +7,7 @@ if (process.env.NODE_ENV == 'development') {
   urlRedirect = 'http://wwf.ngrok.xiaomiqiu.cn'
 }else{
   baseApi = 'http://flower.okbounty.com/flower'
-  appId = 'wx250903ace4240e37'
+  appId = 'wx1533da174fa91f3b'
   urlRedirect = 'http://flowerweb.okbounty.com'
 }
 export{

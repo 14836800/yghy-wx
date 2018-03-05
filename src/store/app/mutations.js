@@ -11,6 +11,14 @@ const mutations = {
   // 设置消息
   [types.SET_MESSAGE](state,obj){
     state.message[obj.type] = obj.message
+  },
+  // 设置code
+  [types.SET_CODE](state,payload){
+    state.code = payload
+  },
+  // 设置地址
+  [types.SET_ADDRESS](state,payload){
+    state.address = payload
   }
 }
 export default mutations

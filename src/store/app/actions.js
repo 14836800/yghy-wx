@@ -10,6 +10,12 @@ export default{
     commit(types.SET_MESSAGE,{type:'success',message:''})
     commit(types.SET_MESSAGE,{type:'error',message:[]})
     commit(types.SET_MESSAGE,{type: 'warning',message: ''})
-    commit(types.SET_MESSAGE,{type:'validation',message:[]})
+    commit(types.SET_MESSAGE,{type:'validation',message:''})
+  },
+  setCode({commit},payload){
+    commit(types.SET_CODE,payload)
+  },
+  setAddress({commit},payload){
+    commit(types.SET_ADDRESS,payload)
   }
 }

@@ -1,7 +1,6 @@
 // import Vue from 'vue'
 import store from '@/store/index'
 import {appId} from '@/config/index'
-import { Toast } from 'mint-ui'
 export default function(that,userConfig){
   let origUrl = window.location.href.split('#')[0]
   let url = encodeURIComponent(origUrl)
@@ -16,10 +15,7 @@ export default function(that,userConfig){
     link: 'http://m.okbounty.com/qsApp2/Vomanage/index.html',
     imgUrl: 'http://m.okbounty.com/qsApp2/Vomanage/images/avar.jpg',
     success: function(){
-      Toast({
-        message: '分享成功',
-        iconClass: 'icon icon-success'
-      })
+      store.dispatch('setMessage',{type:'success',message:'分享成功'})
     }
   }
   let wxConfig = Object.assign({},defaultConfig,userConfig)

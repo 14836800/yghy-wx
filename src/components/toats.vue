@@ -25,13 +25,13 @@
         return this.message.error.length > 0
       },
       hasValidationMessage() {
-        return this.message.validation.length > 0
+        return this.message.validation !== ''
       },
       formatedErrorMessage() {
         return this.message.error.map(msg => `${msg}`).join('<br>')
       },
       formatedValidationMessage() {
-        return this.message.validation.map(msg => `${msg}`).join('<br>')
+        return this.message.validation
       },
     },
     methods:{
@@ -55,7 +55,7 @@
       hasValidationMessage(val){
         if(val){
           setTimeout(()=>{
-            this.setMessage({type:'validation',message:[]})
+            this.setMessage({type:'validation',message:''})
           },1000); 
         }
       }
