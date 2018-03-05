@@ -1,20 +1,38 @@
 import {isArray} from 'lodash'
 import { Indicator, Toast } from 'mint-ui';
 import {urlRedirect,appId} from '@/config/index'
-import {removeStore} from '@/utils/helps'
+import {removeStore,setStore} from '@/utils/helps'
 export default (http,store,router) =>{
   // https://github.com/mzabriskie/axios#interceptors
   http.interceptors.response.use(
     response => {
       if(response.data.status === '10000'){
-        store.dispatch('setMessage',{type:'error',message:'错误的code'})
+        store.dispatch('setMessage',{type:'error',message:['错误的code']})
         store.dispatch('setFetching', { fetching: false })
         removeStore('openId')
         setTimeout(()=>{
           window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(urlRedirect)}&response_type=code&scope=snsapi_base&state=123#wechat_redirect`
         },2000)
-      }else if(response.data.status !== '200'){
+        // router.push({path:'/'})
+      }else if(response.data.status === '10001'){
         store.dispatch('setMessage',{type:'validation',message:response.data.msg})
+        store.dispatch('setFetching', { fetching: false })
+        if(response.data.data){
+          setStore('openId',response.data.data.openId)
+        }
+        setTimeout(()=>{
+          router.push({path:'/login'})
+        },1000)
+      }else if(response.data.status === '800100'){
+        store.dispatch('setMessage',{type:'validation',message:response.data.msg})
+        store.dispatch('setFetching', { fetching: false })
+        removeStore('openId')
+        setTimeout(()=>{
+          window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(urlRedirect)}&response_type=code&scope=snsapi_base&state=123#wechat_redirect`
+        },2000)
+        // router.push({path:'/login'})
+      }else if(response.data.status !== '200'){
+        store.dispatch('setMessage',{type:'error',message:[response.data.msg]})
         store.dispatch('setFetching', { fetching: false })
         return response
         // removeStore('openId')

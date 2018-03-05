@@ -67,17 +67,17 @@
       </transition>
     </div>
     <div class="button_bottom" ref='button_bottom'>
-      <div class="b_one" @click="handleMessage">账单详情</div>
-      <div class="b_two"  @click="handleMessage">查看订单</div>
-      <!-- <router-link class="b_one" to="/myorder">账单详情</router-link>
-      <router-link class="b_two"  to="/search">查看订单</router-link> -->
+      <!-- <div class="b_one" @click="handleMessage">账单详情</div>
+      <div class="b_two"  @click="handleMessage">查看订单</div> -->
+      <router-link class="b_one" to="/order-details">账单详情</router-link>
+      <router-link class="b_two"  to="/show-order">查看订单</router-link>
     </div> 
   </div>
 </template>
 <script>
 import {mapGetters,mapActions,mapState} from 'vuex'
 import {getStore,setStore} from '@/utils/helps'
-// import {urlRedirect,appId} from '@/config/index'
+import {urlRedirect,appId} from '@/config/index'
 import { MessageBox } from 'mint-ui'
 export default {
   data(){
@@ -111,13 +111,12 @@ export default {
     }else if(this.getCode){
       let data = 'code='+this.getCode
       this.initData(data)
+    }else if(!this.getCode && !getStore('openId')){
+      let redirect = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(urlRedirect)}&response_type=code&scope=snsapi_base&state=123#wechat_redirect`
+      MessageBox.confirm('没有权限请允许授权').then(action => {
+        window.location.href = redirect
+      })
     }
-    // else if(!this.getCode && !getStore('openId')){
-    //   let redirect = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(urlRedirect)}&response_type=code&scope=snsapi_base&state=123#wechat_redirect`
-    //   MessageBox.confirm('没有权限请允许授权').then(action => {
-    //     window.location.href = redirect
-    //   })
-    // }
   },
   methods:{
     ...mapActions(['setFetching','setMessage']),
@@ -134,11 +133,6 @@ export default {
             if(data.data.openId){
               setStore('openId',data.data.openId)
             }
-          }else{
-            this.setMessage({type:'validation',message:'账号未绑定.'})
-            setTimeout(()=>{
-              this.$rotuer.replace({path:'/'})
-            })
           }
         })
     },
@@ -188,9 +182,6 @@ export default {
     },
     routerClick(item){
       this.$router.push({ path: '/product', query: { content: JSON.stringify(item)}})
-    },
-    handleMessage(){
-      this.setMessage({type:'validation',message:'此模块暂时还未完成'})
     }
   },
 }

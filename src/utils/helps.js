@@ -72,3 +72,42 @@ export const getStyle = (element, attr, NumberMode = 'int') => {
     //在获取 opactiy 时需要获取小数 parseFloat
     return NumberMode == 'float' ? parseFloat(target) : parseInt(target);
 }
+
+//日期转换
+export function getDiffTime(data) {
+    var date = new Date(data);
+    var Y = date.getFullYear() + '-',
+      M = (date.getMonth() + 1 < 10 ? "0"+(date.getMonth() + 1) : date.getMonth() + 1) + '-',
+      D = date.getDate() < 10 ? "0"+date.getDate() : date.getDate() + ' ',
+      h, m, s;
+    return Y + M + D;
+  }
+  
+  //一周前
+  export function beforData(){
+    var now = new Date();
+    var date = new Date(now.getTime() - 7 * 24 * 3600 * 1000);
+    var Y = date.getFullYear() + '-',
+      M = (date.getMonth() + 1 < 10 ? "0"+(date.getMonth() + 1) : date.getMonth() + 1) + '-',
+      D = date.getDate() < 10 ? "0"+date.getDate() : date.getDate() + ' ',
+      h, m, s;
+    return Y + M + D;
+  }
+  //日期比较
+export function duibi(a, b) {
+    var arr = a.split("-");
+    var starttime = new Date(arr[0], arr[1], arr[2]);
+    var starttimes = starttime.getTime();
+ 
+    var arrs = b.split("-");
+    var lktime = new Date(arrs[0], arrs[1], arrs[2]);
+    var lktimes = lktime.getTime();
+ 
+    if (starttimes >= lktimes) {
+         store.dispatch('setMessage',{type:'error',message:['结束时间不能大于开始时间']})
+        return false;
+    }
+    else
+        return true;
+ 
+ }

@@ -22,6 +22,14 @@ const router = new Router({
     name: '登入绑定',
     component: ()=>import('../views/login/index')
   },{
+    path: '/order-details',
+    name: '账单详情',
+    component: ()=>import('../views/index/orderDetails')
+  },{
+    path: '/show-order',
+    name: '查看订单',
+    component: ()=>import('../views/index/showOrder')
+  },{
     path: '/rechange',
     name: '充值',
     component: ()=>import('../views/rechange/index')
