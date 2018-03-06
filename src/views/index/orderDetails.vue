@@ -49,8 +49,7 @@
 <script>
 import {DatetimePicker} from 'mint-ui'
 import {mapActions} from 'vuex'
-import {getDiffTime ,duibi,beforData,getStore} from '@/utils/helps'
-import _ from 'lodash'
+import {getDiffTime ,duibi,beforData,afterData,getStore} from '@/utils/helps'
 export default {
   components:{
     DatetimePicker
@@ -62,7 +61,7 @@ export default {
       dateStart:'开始时间',
       dateEnd:'结束时间',
       startDate:new Date(beforData()),
-      endDate:new Date(),
+      endDate:new Date(afterData()),
       floatColor_start:"#979797",
       floatColor_end:"#979797",
       dataValue:[]
@@ -117,7 +116,7 @@ export default {
     },
     searchButton(){
       if(this.dateStart!="开始时间" && this.dateEnd!="结束时间"){
-        let data="openId="+getStore('openId')+"&startDate="+_.trim(this.dateStart)+"&endDate="+_.trim(this.dateEnd)
+        let data="openId="+getStore('openId')+"&startDate="+this.dateStart+"&endDate="+this.dateEnd
         this.setFetching({fetching:true})
         this.$http.post('/merchat/accountNote',data)
           .then(({data})=>{

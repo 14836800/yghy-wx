@@ -78,7 +78,7 @@ export function getDiffTime(data) {
     var date = new Date(data);
     var Y = date.getFullYear() + '-',
       M = (date.getMonth() + 1 < 10 ? "0"+(date.getMonth() + 1) : date.getMonth() + 1) + '-',
-      D = date.getDate() < 10 ? "0"+date.getDate() : date.getDate() + ' ',
+      D = date.getDate() < 10 ? "0"+date.getDate() : date.getDate() + '',
       h, m, s;
     return Y + M + D;
   }
@@ -89,7 +89,16 @@ export function getDiffTime(data) {
     var date = new Date(now.getTime() - 7 * 24 * 3600 * 1000);
     var Y = date.getFullYear() + '-',
       M = (date.getMonth() + 1 < 10 ? "0"+(date.getMonth() + 1) : date.getMonth() + 1) + '-',
-      D = date.getDate() < 10 ? "0"+date.getDate() : date.getDate() + ' ',
+      D = date.getDate() < 10 ? "0"+date.getDate() : date.getDate() + '',
+      h, m, s;
+    return Y + M + D;
+  }
+  export function afterData(){
+    var now = new Date();
+    var date = new Date(now.getTime() + 7 * 24 * 3600 * 1000);
+    var Y = date.getFullYear() + '-',
+      M = (date.getMonth() + 1 < 10 ? "0"+(date.getMonth() + 1) : date.getMonth() + 1) + '-',
+      D = date.getDate() < 10 ? "0"+date.getDate() : date.getDate() + '',
       h, m, s;
     return Y + M + D;
   }
@@ -104,7 +113,7 @@ export function duibi(a, b) {
     var lktimes = lktime.getTime();
  
     if (starttimes >= lktimes) {
-         store.dispatch('setMessage',{type:'error',message:['结束时间不能大于开始时间']})
+         store.dispatch('setMessage',{type:'error',message:['结束时间不能小于开始时间']})
         return false;
     }
     else

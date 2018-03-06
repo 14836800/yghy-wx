@@ -19,8 +19,8 @@
          <input type="span" v-model="address" placeholder="详细地址" class="place_holder" />
        </div>
       </div>
-       <div class="addr_save_btn" @click="save">保存</div>
       </div>
+       <div class="addr_save_btn" @click="save">保存</div>
       <div class="pos_bottom" style="background-color:white">
         <Popup
           v-model="popupVisible"
