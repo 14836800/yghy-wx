@@ -1,6 +1,5 @@
-# Imitate Cosmos - a special third party weibo APP
 
-阳光花艺公众号
+# 阳光花艺公众号
 
 - Email : whevether@qq.com
 - 微博 : [@p_prod](https://weibo.com/5530559065/profile)
