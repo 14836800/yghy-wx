@@ -9,10 +9,11 @@
 这是一个使用vue 写的阳光花艺公众号,有充值下单功能等'
 ## 线上地址
 <p><a href="http://flowerweb.okbounty.com/" title="演示" rel="nofollow" target="_blank">在线演示地址</a></p>
+
 ## 演示动图
 | 效果 |动图 | 🎉🎉 |
 | :----:  | :----: | :----: |
-| ![image1](https://github.com/whevether/yghy-wx/screen/yghy.gif?raw=true) 
+| ![image1](https://github.com/whevether/yghy-wx/screen/yghy.gif) 
 
 
 ## 主要功能
