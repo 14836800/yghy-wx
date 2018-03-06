@@ -13,7 +13,7 @@
 ## 演示动图
 | 效果 |动图 | 🎉🎉 |
 | :----:  | :----: | :----: |
-| ![image1](https://github.com/whevether/yghy-wx/screen/yghy.gif) 
+| ![image1](https://github.com/whevether/yghy-wx/tree/master/screen/yghy.gif) 
 
 
 ## 主要功能
