@@ -2,7 +2,7 @@
 # 阳光花艺公众号
 
 - Email : whevether@qq.com
-- 微博 : [@p_prod](https://weibo.com/5530559065/profile)
+- 微博 : [@keep_wan](https://weibo.com/5530559065/profile)
 
 ## 简介
 这是一个使用vue 写的阳光花艺公众号,有充值下单功能等'
