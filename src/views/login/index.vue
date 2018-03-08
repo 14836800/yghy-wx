@@ -26,8 +26,8 @@ export default {
       img0: require('@/assets/images/index_02.jpg'),
       img1: require('@/assets/images/index_ico.png'),
       img2: require('@/assets/images/pas_ico.png'),
-      user: '10002',
-      pwd: '723037'
+      user: '',
+      pwd: ''
     }
   },
   methods:{
